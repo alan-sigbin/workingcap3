@@ -1,0 +1,308 @@
+.App {
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 40vmin;
+  pointer-events: none;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+.banner{
+  padding-top: 4rem;
+  background-color: #232426;
+}
+.lobster-font{
+  font-family: 'Lobster', cursive;
+}
+.darkfont{
+  color: #232426;
+}
+.lightfont{
+  color: #DDDFE2;
+}
+
+/* The side navigation menu */
+.sidenav {
+  height: 100%; /* 100% Full-height */
+  width: 0; /* 0 width - change this with JavaScript */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Stay on top */
+  top: 0;
+  left: 0;
+  background-color: #111; /* Black*/
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 60px; /* Place content 60px from the top */
+  transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+}
+
+/* The navigation menu links */
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+/* When you mouse over the navigation links, change their color */
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+/* Position and style the close button (top right corner) */
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+#main {
+  transition: margin-left .5s;
+  padding: 20px;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+html,
+body {
+  margin: 0;
+  background-color: #F0F3F3;
+}
+
+#App {
+  font-family: sans-serif;
+
+  /* Give app full page to work with */
+  height: 100vh;
+}
+
+#page-wrap {
+  text-align: center;
+
+  /* Prevent sidebar from showing a scrollbar on page */
+  overflow: auto;
+}
+
+
+/* Individual item */
+.bm-item {
+  display: inline-block;
+  
+  /* Our sidebar item styling */
+  text-decoration: none;
+  margin-bottom: 10px;
+  color: #d1d1d1;
+  transition: color 0.2s;
+}
+
+/* Change color on hover */
+.bm-item:hover {
+  color: white;
+}
+
+/* The rest copied directly from react-burger-menu docs */
+
+/* Position and sizing of burger button */
+.bm-burger-button {
+  /* position: absolute; */
+  position: fixed;
+  width: 36px;
+  height: 30px;
+  left: 36px;
+  top: 36px;
+}
+
+/* Color/shape of burger icon bars */
+.bm-burger-bars {
+  background: #E2BD9B;
+}
+
+/* Position and sizing of clickable cross button */
+.bm-cross-button {
+  height: 24px;
+  width: 24px;
+}
+
+/* Color/shape of close button cross */
+.bm-cross {
+  background: #bdc3c7;
+}
+
+/* General sidebar styles */
+.bm-menu {
+  background: #373a47;
+  padding: 2.5em 1.5em 0;
+  font-size: 1.15em;
+}
+
+/* Morph shape necessary with bubble or elastic */
+.bm-morph-shape {
+  fill: #373a47;
+}
+
+/* Wrapper for item list */
+.bm-item-list {
+  color: #b8b7ad;
+}
+
+/* Styling of overlay */
+.bm-overlay {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.border-dot{
+  outline-width: 2px;
+  outline-style: dashed;
+  outline-color: #1C6EA4;
+  outline-offset: 1px;
+}
+
+.bg-auth { 
+  /* The image used */
+  background-image: url("./images/img1.jpg");
+  /* Full height */
+  height: 695px; 
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.navbar {
+  margin: 0;
+}
+
+/* f12 */
+.f12 {
+  font-size: 12px;
+}
+.f20 {
+  font-size: 20px;
+}
+
+.servicecardfill {
+  background-color: #DDDFE2;
+}
+
+.myapptcard {
+  width: '100%';
+}
+
+.dropshadow {
+-webkit-box-shadow: 5px 5px 10px 0px rgba(0,0,0,0.42); 
+box-shadow: 5px 5px 10px 0px rgba(0,0,0,0.42);
+}
+
+/* about image */
+.abtimagecontainer {
+  /* position: relative; */
+  width: 100%;
+}
+
+.abtimage {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.overlay {
+  position: absolute;
+  bottom: 100%;
+  left: 0;
+  right: 0;
+  background-color: #008CBA;
+  overflow: hidden;
+  width: 100%;
+  height:0;
+  transition: .5s ease;
+}
+
+.abtimagecontainer:hover .overlay {
+  bottom: 0;
+  height: 100%;
+}
+
+.abttext {
+  word-wrap: break-word;
+  color: white;
+  font-size: 16px;
+  position: absolute;
+  overflow: hidden;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+}
+
+/* PARALLAX */
+.parallax {
+  /* The image used */
+  background-image: url('./images/img5.jpg');
+  /* Full height */
+  height: 100%; 
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.dark-overlay {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.5);
+  z-index: 2;
+  cursor: pointer;
+}
+
+.footer-text{
+  color: white;
+  font-size: 14px;
+}
+
+.para-text {
+  font-family: 'Lobster', cursive;
+  color: white;
+  font-size: 20px;
+  font-style: italic;
+  text-shadow: 2px 2px 3px #000000;
+}

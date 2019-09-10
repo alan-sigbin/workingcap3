@@ -1,0 +1,130 @@
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+
+import logo from './logo.svg';
+import ModalRoot from './ModalRoot';
+
+import './dist/css/template.css';
+import './App.css';
+
+import { showModal, hideModal } from './actions/modal'
+
+const MESSAGE = "A redux modal component.";
+
+const mapDispatchToProps = dispatch => ({
+  hideModal: () => dispatch(hideModal()),
+  showModal: (modalProps, modalType) => {
+    dispatch(showModal({ modalProps, modalType }))
+  }
+})
+
+const App = (closeModal) => {
+
+  const closeModal = e => {
+    hideModal();
+  }
+
+  const onInputChange = e => {
+    setState({
+      [event.target.name]: event.target.value
+    });
+  }
+
+  const showInput = e => {
+    console.log(state);
+  }
+
+  const openAlertModal = e => {
+    showModal({
+      open: true,
+      title: 'Alert Modal',
+      message: MESSAGE,
+      closeModal: {closeModal}
+    }, 'alert')
+  }
+
+  const openConfirmModal = e => {
+    showModal({
+      open: true,
+      title: 'Confirm Modal',
+      message: MESSAGE,
+      confirmAction: {closeModal},
+      closeModal: {closeModal}
+    }, 'confirm')
+  }
+
+  const openDeleteModal = e => {
+    showModal({
+      open: true,
+      title: 'Delete Modal',
+      message: MESSAGE,
+      deleteAction: {closeModal},
+      closeModal: {closeModal},
+      deleteText: 'delete'
+    }, 'delete')
+  }
+
+  const openPromptModal = e => {
+    showModal({
+      open: true,
+      title: 'Prompt Modal',
+      fields: [{
+        label: 'Address name',
+        name: 'addressName',
+        placeholder: 'Enter address name',
+      }],
+      onInputChange: {onInputChange},
+      confirmAction: {showInput}
+    }, 'prompt')
+  }
+
+    return (
+      <div className="app">
+        <header className="app-header">
+          <img src={logo} className="app-logo" alt="logo" />
+          <h1 className="app-title">A Redux Modal Component</h1>
+        </header>
+        <div className="container">
+
+          <div className="modal-types row d-flex justify-content-center align-items-center">
+
+            <div className="col">
+              <button
+                className="btn btn-outline-primary btn-block"
+                onClick={() => openAlertModal()}
+              >alert</button>
+            </div>
+
+            <div className="col">
+              <button
+                className="btn btn-outline-primary btn-block"
+                onClick={() => openConfirmModal()}
+              >confirm</button>
+            </div>
+
+            <div className="col">
+              <button
+                className="btn btn-outline-primary btn-block"
+                onClick={() => openDeleteModal()}
+              >delete</button>
+            </div>
+
+            <div className="col">
+              <button
+                className="btn btn-outline-primary btn-block"
+                onClick={() => openPromptModal()}
+              >prompt</button>
+            </div>
+
+          </div>
+
+        </div>
+        <span className="app-intro">
+          To get started, edit <code>src/App.js</code> and save to reload.
+        </span>
+        <ModalRoot />
+      </div>
+    );
+}
+
+export default connect(null, mapDispatchToProps)(App);
